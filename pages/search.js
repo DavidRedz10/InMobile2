@@ -2,28 +2,18 @@ import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Cta from "@layouts/components/Cta";
-import Button from "@layouts/shortcodes/Button";
-import { markdownify } from "@lib/utils/textConverter";
 import Image from "next/image";
-import Link from "next/link";
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 import SearchFilters from '/components/SearchFilters';
 import { Flex, Box, Text, Icon, ChakraProvider } from '@chakra-ui/react';
 import { BsFilter } from 'react-icons/bs';
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '../components/Property';
 
 const Search = ({ properties , frontmatter, propertiesForSale, propertiesForRent }) => {
-  const { banner, feature, services, workflow, call_to_action } = frontmatter;
-  const { title } = config.site;
   const [searchFilters, setSearchFilters] = useState(false);
-  const router = useRouter();
 
   return (
     <Base justifyContent="center" alignContent="center">
