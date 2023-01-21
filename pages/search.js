@@ -1,7 +1,5 @@
-import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Image from "next/image";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
@@ -12,7 +10,7 @@ import { BsFilter } from 'react-icons/bs';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '../components/Property';
 
-const Search = ({ properties , frontmatter, propertiesForSale, propertiesForRent }) => {
+const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
 
   return (
